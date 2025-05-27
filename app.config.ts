@@ -53,6 +53,15 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
       {
         microphonePermission: 'Allow IndyChat to access your microphone.'
       }
-    ]
+    ],
+    [
+      'expo-build-properties',
+      {
+        android: {
+          googleServicesFile: './google-services.json',
+        },
+      },
+    ],
+    'expo-firebase-core', 
   ]
 });

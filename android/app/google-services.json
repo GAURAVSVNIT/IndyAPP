@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "418983891156",
+    "project_id": "indianapolischat",
+    "storage_bucket": "indianapolischat.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:418983891156:android:ee88140cda06934e79ab41",
+        "android_client_info": {
+          "package_name": "com.indy.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "418983891156-pujs1njk1ebapvsoief0i0t7mgkp3c4p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbcKTnWTyijqAkoibJXfrm2mkZAmmlSig"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "418983891156-pujs1njk1ebapvsoief0i0t7mgkp3c4p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

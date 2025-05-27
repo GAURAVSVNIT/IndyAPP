@@ -52,11 +52,9 @@ export async function textToSpeech(text: string, voiceId: string = 'default') {
 export async function speechToText(audioUri: string): Promise<string> {
   try {
     const formData = new FormData();
-    formData.append('audio', {
-      uri: audioUri,
-      type: 'audio/wav',
-      name: 'audio.wav',
-    });
+    const response = await fetch(audioUri);
+    const blob = await response.blob();
+    formData.append('audio', blob, 'audio.wav');
 
     const response = await fetch(`${API_URL}/speech-to-text`, {
       method: 'POST',

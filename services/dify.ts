@@ -1,7 +1,6 @@
-import Constants from 'expo-constants';
-
-const API_KEY = Constants.expoConfig?.extra?.EXPO_PUBLIC_DIFY_API_KEY;
-const API_ENDPOINT = Constants.expoConfig?.extra?.EXPO_PUBLIC_DIFY_API_ENDPOINT;
+// Temporary test values - replace with your actual API credentials
+const API_KEY = 'app-3OpCWrbRkXEDPuDIYlojNVkL';
+const API_ENDPOINT = 'https://api.dify.ai/v1';
 
 interface ChatMessage {
   role: 'user' | 'assistant';
@@ -10,6 +9,7 @@ interface ChatMessage {
 
 export async function sendMessage(message: string, conversationId?: string) {
   try {
+    console.log('Sending to:', API_ENDPOINT);
     const response = await fetch(`${API_ENDPOINT}/chat-messages`, {
       method: 'POST',
       headers: {
@@ -19,19 +19,27 @@ export async function sendMessage(message: string, conversationId?: string) {
       body: JSON.stringify({
         inputs: {},
         query: message,
-        response_mode: 'streaming',
+        response_mode: 'streaming', 
         conversation_id: conversationId,
+        user: "user123" // TODO: Replace with your actual user identification
       }),
     });
 
     if (!response.ok) {
-      throw new Error('Failed to send message to Dify AI');
+      const errorBody = await response.text();
+      console.error('API Error Details:', {
+        status: response.status,
+        statusText: response.statusText,
+        url: response.url,
+        body: errorBody
+      });
+      throw new Error(`API Error: ${response.status} ${response.statusText}`);
     }
 
     const data = await response.json();
     return data;
   } catch (error) {
-    console.error('Error sending message to Dify AI:', error);
+    console.error('Full Error:', error);
     throw error;
   }
 }

@@ -1,18 +1,18 @@
 {
   "expo": {
-    "name": "indy-chat",
-    "slug": "indy-chat",
+    "name": "IndyApp",
+    "slug": "indyapp",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "scheme": "indyapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "package": "com.indy.chat",
+      "package": "com.indy.app",
       "googleServicesFile": "./google-services.json"
     },
     "web": {
@@ -21,6 +21,7 @@
       "favicon": "./assets/images/favicon.png"
     },
     "plugins": [
+      "expo-firebase-core",
       "expo-router",
       "expo-font",
       "expo-web-browser"
@@ -31,7 +32,7 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "b544a1f9-d830-40e8-a6b1-08a3e58a5a88"
+        "projectId": "ea542e23-cf98-4d38-802e-0136d9dfa5ec"
       }
     }
   }
