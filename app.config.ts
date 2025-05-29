@@ -2,12 +2,12 @@ import { ExpoConfig, ConfigContext } from 'expo/config';
 
 export default ({ config }: ConfigContext): ExpoConfig => ({
   ...config,
-  name: 'IndyChat',
-  slug: 'indychat',
+  name: 'IndyApp',
+  slug: 'indyapp',
   version: '1.0.0',
   orientation: 'portrait',
   icon: './assets/images/icon.png',
-  scheme: 'indychat',
+  scheme: 'indyapp',
   userInterfaceStyle: 'automatic',
   splash: {
     image: './assets/images/icon.png', // Fallback to icon.png since splash.png is missing
@@ -22,14 +22,18 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
   ],
   ios: {
     supportsTablet: true,
-    bundleIdentifier: 'com.yourcompany.indychat'
+    bundleIdentifier: 'com.yourcompany.indyapp'
   },
   android: {
     adaptiveIcon: {
       foregroundImage: './assets/images/adaptive-icon.png',
       backgroundColor: '#ffffff'
     },
-    package: 'com.yourcompany.indychat'
+    package: 'com.yourcompany.indyapp',
+    permissions: [
+      "INTERNET",
+      "ACCESS_NETWORK_STATE"
+    ]
   },
   web: {
     favicon: './assets/images/favicon.png',
@@ -51,7 +55,7 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
     [
       'expo-av',
       {
-        microphonePermission: 'Allow IndyChat to access your microphone.'
+        microphonePermission: 'Allow IndyApp to access your microphone.'
       }
     ],
     [
@@ -62,6 +66,8 @@ export default ({ config }: ConfigContext): ExpoConfig => ({
         },
       },
     ],
-    'expo-firebase-core', 
+    'expo-firebase-core',
+    'expo-font',
+    'expo-web-browser'
   ]
 });

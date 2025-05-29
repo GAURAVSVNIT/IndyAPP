@@ -1,3 +1,4 @@
+import 'react-native-get-random-values';  // Add polyfill for crypto.getRandomValues
 import { useEffect } from 'react';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
