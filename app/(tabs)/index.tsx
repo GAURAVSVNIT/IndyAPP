@@ -24,7 +24,8 @@ export default function ChatsScreen() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [conversationId, setConversationId] = useState<string | undefined>();
+  const [conversationId, t2r4d2e  4f56j7k8l;'
+  g | undefined>();
   const flatListRef = useRef<FlatList>(null);
 
   const handleSend = async () => {
@@ -41,16 +42,17 @@ export default function ChatsScreen() {
     setIsLoading(true);
 
     try {
-      const response = await sendMessage(inputText, conversationId);
-      
+      const answer = await sendMessage(inputText, conversationId);
+      console.log('AI answer:', answer);
+
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        content: response.answer,
+        content: answer,
         isUser: false,
       };
-
+      
       setMessages(prev => [...prev, aiMessage]);
-      setConversationId(response.conversationId);
+      // setConversationId(...) // Remove or update this line if you need conversationId, otherwise comment it out;
     } catch (error) {
       console.error('Error sending message:', error);
       const errorMessage: Message = {
@@ -178,7 +180,7 @@ const styles = StyleSheet.create({
   },
   messageText: {
     fontSize: 16,
-    fontFamily: 'Inter400',
+    // fontFamily: 'Inter400',
     lineHeight: 22,
   },
   userText: {
