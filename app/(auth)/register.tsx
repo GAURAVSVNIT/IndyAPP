@@ -27,7 +27,7 @@ export default function RegisterScreen() {
     
     try {
       await signUp(name, email, password);
-      router.replace('/(app)/(tabs)');
+      router.replace('/(app)');
     } catch (error) {
       console.error('Registration error:', error);
     }

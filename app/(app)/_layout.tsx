@@ -18,14 +18,12 @@ export default function AppLayout() {
 
   return (
     <Stack screenOptions={{ headerShown: false }}>
-      <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-      <Stack.Screen name="chat/[id]" options={{ presentation: 'card' }} />
-      <Stack.Screen name="user/[id]" options={{ presentation: 'card' }} />
-      <Stack.Screen name="group/[id]" options={{ presentation: 'card' }} />
-      <Stack.Screen name="call/[id]" options={{ presentation: 'modal' }} />
-      <Stack.Screen name="settings/theme" />
-      <Stack.Screen name="settings/privacy" />
-      <Stack.Screen name="settings/notifications" />
+      <Stack.Screen name="index" options={{ headerShown: false }} />
+      <Stack.Screen name="settings" options={{ 
+        presentation: 'modal',
+        headerShown: true,
+        title: 'Settings'
+      }} />
     </Stack>
   );
 }

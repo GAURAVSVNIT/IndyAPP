@@ -37,10 +37,14 @@ export default function RootLayout() {
     <Provider store={store}>
       <AuthProvider>
         <ThemeProvider>
-          <Stack screenOptions={{ headerShown: false }}>
+          <Stack 
+            screenOptions={{ headerShown: false }}
+            initialRouteName="(app)"
+          >
             <Stack.Screen name="(auth)" options={{ headerShown: false }} />
             <Stack.Screen name="(app)" options={{ headerShown: false }} />
             <Stack.Screen name="+not-found" options={{ title: 'Not Found' }} />
+            <Stack.Screen name="index" options={{ headerShown: false }} />
           </Stack>
           <StatusBar style="auto" />
         </ThemeProvider>

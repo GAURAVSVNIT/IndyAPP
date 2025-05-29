@@ -24,8 +24,7 @@ export default function ChatsScreen() {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [conversationId, t2r4d2e  4f56j7k8l;'
-  g | undefined>();
+  const [conversationId, setConversationId] = useState<string | undefined>();
   const flatListRef = useRef<FlatList>(null);
 
   const handleSend = async () => {

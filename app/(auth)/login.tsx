@@ -19,7 +19,7 @@ export default function LoginScreen() {
     
     try {
       await signIn(email, password);
-      router.replace('/(app)/(tabs)');
+      router.replace('/(app)');
     } catch (error) {
       console.error('Login error:', error);
     }
